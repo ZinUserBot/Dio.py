@@ -13,14 +13,14 @@ scheduler = AsyncIOScheduler()
 
 async def change_time_profile_bio():
     if status_time_bio[0] == 'on':
-        country_time_zone = pytz.timezone()
+        country_time_zone = pytz.timezone('Asia/Tehran')
         country_time = datetime.now(country_time_zone)
         time = country_time.strftime("%H:%M")
         await app.update_profile(bio=f'{time} | {bio[0]}')
         
 async def change_time_profile_name():
     if status_time_name[0] == 'on':
-        country_time_zone = pytz.timezone()
+        country_time_zone = pytz.timezone('Asia/Tehran')
         country_time = datetime.now(country_time_zone)
         time = country_time.strftime("%H:%M")
         await app.update_profile(last_name=f'{time}')
